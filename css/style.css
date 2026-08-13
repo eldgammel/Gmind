@@ -1,0 +1,155 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+    color: #f1f5f9;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #22c55e;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav__link {
+    color: #cbd5e1;
+    transition: 0.3s;
+}
+
+.nav__link:hover {
+    color: #22c55e;
+}
+
+/* COMMON BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn--primary {
+    background-color: #22c55e;
+    color: #06240f;
+}
+
+.btn--primary:hover {
+    background-color: #16a34a;
+}
+
+.btn--secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #f1f5f9;
+}
+
+.btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* COMMON SECTIONS */
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-text {
+    max-width: 700px;
+    color: #cbd5e1;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__text {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 768px) {
+    .header__wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+}

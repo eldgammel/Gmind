@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mGame | Угадай город</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/guess-city.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <a href="index.html" class="logo">mGame</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="guess-city-page">
+        <section class="guess-city">
+            <div class="container">
+                <div class="guess-city__wrapper">
+
+                    <div class="guess-city__top">
+                        <a href="index.html" class="guess-city__back">← Назад на главную</a>
+                        <p class="guess-city__subtitle">Географическая мини-игра</p>
+                        <h1 class="guess-city__title">Угадай город</h1>
+                        <p class="guess-city__text">
+                            На этой странице позже можно вывести страну, вопрос или подсказку,
+                            а пользователь должен будет ввести правильный город.
+                        </p>
+                    </div>
+
+                    <div class="guess-city__card">
+                        <div class="guess-city__content">
+                            <div class="guess-city__task">
+                                <span class="guess-city__task-label">Задание</span>
+                                <p class="guess-city__task-text">Здесь будет отображаться вопрос или выбранная страна</p>
+                            </div>
+
+                            <div class="guess-city__input-area">
+                                <label for="city-answer" class="guess-city__label">Введите название города</label>
+                                <input
+                                    type="text"
+                                    id="city-answer"
+                                    class="guess-city__input"
+                                    placeholder="Например: Берлин"
+                                >
+                                <button class="guess-city__button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 mGame. Учебный проект для практики JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="js/logic.js"></script>
+</body>
+</html>

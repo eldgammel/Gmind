@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>mGame</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="logo">mGame</div>
+
+                <nav class="nav">
+                    <a href="#games" class="nav__link">Игры</a>
+                    <a href="#about" class="nav__link">О проекте</a>
+                    <a href="#start" class="nav__link">Начать</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="start">
+            <div class="container">
+                <div class="hero__wrapper">
+                    <div class="hero__content">
+                        <p class="hero__subtitle">Тренируй внимание, реакцию и мышление</p>
+                        <h1 class="hero__title">mGame — платформа с мини-играми для развития мозга</h1>
+                        <p class="hero__text">
+                            Учебный веб-проект, в котором собраны мини-игры на концентрацию, скорость,
+                            знание стран и столиц, а также когнитивные навыки.
+                        </p>
+
+                        <div class="hero__buttons">
+                            <a href="#games" class="btn btn--primary">Перейти к играм</a>
+                            <a href="#about" class="btn btn--secondary">О проекте</a>
+                        </div>
+                    </div>
+
+                    <div class="hero__info">
+                        <div class="info-card">
+                            <span class="info-card__label">Игр в первой версии</span>
+                            <span class="info-card__value">4</span>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-card__label">Стек проекта</span>
+                            <span class="info-card__value">HTML / CSS / JS</span>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-card__label">Главная цель</span>
+                            <span class="info-card__value">Практика JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games" id="games">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">Игры</h2>
+                    <p class="section-text">
+                        Стартовый набор мини-игр для первой версии проекта mGame.
+                    </p>
+                </div>
+
+                <div class="games__grid">
+                    <article class="game-card">
+                        <div class="game-card__icon">🌍</div>
+                        <h3 class="game-card__title">Угадай страну</h3>
+                        <p class="game-card__text">
+                            На карте выделяется страна, а пользователь должен ввести её название.
+                        </p>
+                        <a href="guess-country.html" class="game-card__btn">Открыть</a>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="game-card__icon">🏙️</div>
+                        <h3 class="game-card__title">Угадай столицу</h3>
+                        <p class="game-card__text">
+                            На карте выделяется страна, а пользователь должен написать её столицу.
+                        </p>
+                        <a href="guess-city.html" class="game-card__btn">Открыть</a>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="game-card__icon">🎨</div>
+                        <h3 class="game-card__title">Тест Струпа</h3>
+                        <p class="game-card__text">
+                            Игра на внимание, в которой нужно правильно определить цвет текста.
+                        </p>
+                        <a href="test-stroop.html" class="game-card__btn">Открыть</a>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="game-card__icon">🔢</div>
+                        <h3 class="game-card__title">Таблицы Шульте</h3>
+                        <p class="game-card__text">
+                            Игра на скорость поиска чисел по порядку в таблице.
+                        </p>
+                        <a href="tables-schulte.html" class="game-card__btn">Открыть</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">О проекте</h2>
+                    <p class="section-text">
+                        mGame создаётся как учебный проект для практики фронтенда и игровой логики на JavaScript.
+                    </p>
+                </div>
+
+                <div class="about__grid">
+                    <div class="about-card">
+                        <h3 class="about-card__title">Практика</h3>
+                        <p class="about-card__text">
+                            Проект помогает отрабатывать DOM, события, таймеры, массивы, объекты и игровую логику.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3 class="about-card__title">Масштабируемость</h3>
+                        <p class="about-card__text">
+                            В будущем можно добавить новые игры, статистику, уровни сложности и сохранение прогресса.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3 class="about-card__title">Портфолио</h3>
+                        <p class="about-card__text">
+                            Готовый проект можно использовать как учебную работу для демонстрации навыков.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 mGame. Учебный проект для практики JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="js/logic.js"></script>
+</body>
+</html>

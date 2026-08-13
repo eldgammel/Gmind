@@ -1,0 +1,410 @@
+/* GUESS COUNTRY PAGE */
+
+.country-page {
+    min-height: calc(100vh - 140px);
+    padding: 20px 0 60px;
+    overflow-x: hidden;
+}
+
+.country-game__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.country-game__intro {
+    max-width: 760px;
+}
+
+.country-game__subtitle {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background-color: rgba(34, 197, 94, 0.12);
+    color: #86efac;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.country-game__board {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: clamp(12px, 2vw, 24px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.country-game__map-area {
+    width: 100%;
+    min-width: 0;
+}
+
+.country-game__map-placeholder {
+    width: 100%;
+    height: clamp(280px, 56vw, 620px);
+    max-height: calc(100vh - 260px);
+    min-height: 260px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(17, 24, 39, 0.72) 100%);
+    border: 1px dashed rgba(148, 163, 184, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(6px, 2vw, 24px);
+    overflow: hidden;
+}
+
+.country-game__map-placeholder svg {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    flex: 0 1 auto;
+}
+
+.country-game__map-placeholder path {
+    fill: #ffffff;
+    stroke: rgba(2, 6, 23, 0.62);
+    stroke-width: 0.35;
+    vector-effect: non-scaling-stroke;
+    transition: 0.3s;
+}
+
+.country-game__map-placeholder path:hover {
+    fill: #22c55e;
+}
+
+.country-game__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.country-game__start-screen,
+.country-game__play-panel,
+.country-game__game-over {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.country-game__play-panel,
+.country-game__game-over {
+    display: none;
+}
+
+/* КНОПКИ */
+
+.country-game__start-button,
+.country-game__restart-button {
+    min-width: 220px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background-color: #22c55e;
+    color: #06240f;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.country-game__start-button:hover,
+.country-game__restart-button:hover {
+    background-color: #16a34a;
+}
+
+/* ПАНЕЛЬ ИГРЫ: INPUT + HUD */
+
+.country-game__play-panel {
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.country-game__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: min(100%, 360px);
+}
+
+.country-game__input-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #cbd5e1;
+}
+
+.country-game__input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #f1f5f9;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.country-game__input::placeholder {
+    color: #94a3b8;
+}
+
+.country-game__input:focus {
+    border-color: rgba(34, 197, 94, 0.55);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ЖИЗНИ И ОЧКИ */
+
+.country-game__hud {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.country-game__stat {
+    min-width: 74px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.country-game__stat-label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 1;
+    color: #94a3b8;
+}
+
+.country-game__stat-value {
+    display: block;
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+/* GAME OVER */
+.country-game__game-over {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.country-game__game-over-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f8fafc;
+    text-align: center;
+}
+
+/* FULLSCREEN GAME STATE */
+.country-game__board:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: clamp(6px, 1.5vw, 14px);
+    border-radius: 0;
+    box-sizing: border-box;
+    background: #020617;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vh, 16px);
+    overflow: hidden;
+}
+
+.country-game__board:fullscreen .country-game__start-screen {
+    display: none;
+}
+
+.country-game__board:fullscreen .country-game__play-panel {
+    display: flex;
+}
+
+.country-game__board:fullscreen .country-game__hud {
+    display: flex;
+}
+
+.country-game__board:fullscreen .country-game__controls {
+    flex-shrink: 0;
+}
+
+.country-game__board:fullscreen .country-game__map-area {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+}
+
+.country-game__board:fullscreen .country-game__map-placeholder {
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    padding: clamp(2px, 1vw, 8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country-game__board:fullscreen .country-game__map-placeholder svg {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* GAME OVER через JS */
+.country-game__board.is-game-over .country-game__play-panel {
+    display: none;
+}
+
+.country-game__board.is-game-over .country-game__start-screen {
+    display: flex;
+}
+
+.country-game__board.is-game-over .country-game__game-over {
+    display: flex;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 992px) {
+    .country-game__map-placeholder {
+        height: clamp(260px, 62vw, 520px);
+        max-height: calc(100vh - 240px);
+    }
+}
+
+@media (max-width: 768px) {
+    .country-page {
+        padding: 16px 0 40px;
+    }
+
+    .country-game__board {
+        border-radius: 22px;
+        gap: 12px;
+    }
+
+    .country-game__map-placeholder {
+        height: clamp(220px, 70vw, 420px);
+        min-height: 220px;
+        max-height: calc(100vh - 220px);
+        border-radius: 18px;
+    }
+
+    .country-game__play-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .country-game__hud {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .country-game__start-button,
+    .country-game__restart-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .country-game__board:fullscreen {
+        padding: 8px;
+        gap: 12px;
+    }
+
+    .country-game__board:fullscreen .country-game__map-placeholder {
+        padding: 2px;
+    }
+}
+
+@media (max-height: 700px) {
+    .country-page {
+        padding-top: 12px;
+        padding-bottom: 32px;
+    }
+
+    .country-game__wrapper {
+        gap: 14px;
+    }
+
+    .country-game__board {
+        gap: 10px;
+    }
+
+    .country-game__map-placeholder {
+        height: min(52vw, 420px);
+        min-height: 180px;
+        max-height: calc(100vh - 190px);
+        padding: 6px;
+    }
+
+    .country-game__board:fullscreen .country-game__map-placeholder {
+        min-height: 0;
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .country-page {
+        padding: 12px 0 32px;
+    }
+
+    .country-game__wrapper {
+        gap: 16px;
+    }
+
+    .country-game__subtitle {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+
+    .country-game__map-placeholder {
+        height: clamp(190px, 74vw, 330px);
+        min-height: 190px;
+        max-height: calc(100vh - 210px);
+    }
+
+    .country-game__controls {
+        gap: 12px;
+    }
+
+    .country-game__input-wrapper {
+        width: 100%;
+    }
+
+    .country-game__board:fullscreen {
+        padding: 6px;
+        gap: 8px;
+    }
+
+    .country-game__board:fullscreen .country-game__play-panel {
+        gap: 8px;
+    }
+
+    .country-game__board:fullscreen .country-game__input {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+}

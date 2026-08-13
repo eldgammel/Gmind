@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mGame | Угадай страну</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/guess-country.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <a href="index.html" class="logo">mGame</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="country-page">
+        <section class="country-game">
+            <div class="container">
+                <div class="country-game__wrapper">
+
+                    <div class="country-game__intro">
+                        <p class="country-game__subtitle">Угадай страну</p>
+                    </div>
+
+                    <div class="country-game__board">
+                        <div class="country-game__map-area">
+                            <div class="country-game__map-placeholder" id="mapContainer"></div>
+                        </div>
+
+                        <div class="country-game__controls">
+                            <div class="country-game__start-screen">
+                                <button class="country-game__start-button" type="button">Старт игры</button>
+                            </div>
+
+                            <div class="country-game__play-panel">
+                                <div class="country-game__input-wrapper">
+                                    <label class="country-game__input-label" for="countryAnswer">Введите название страны</label>
+                                    <input
+                                        class="country-game__input"
+                                        type="text"
+                                        id="countryAnswer"
+                                        name="countryAnswer"
+                                        placeholder="Например: Франция"
+                                        autocomplete="off"
+                                    >
+                                </div>
+                            </div>
+                            <div class="country-game__game-over" id="gameOverBlock">
+                                <p class="country-game__game-over-text">Вы проиграли!</p>
+                            </div>
+                            <div class="country-game__hud">
+                                    <div class="country-game__stat country-game__stat--lives">
+                                        <span class="country-game__stat-label">Жизни</span>
+                                        <span class="country-game__stat-value" id="livesValue">3</span>
+                                    </div>
+
+                                    <div class="country-game__stat country-game__stat--points">
+                                        <span class="country-game__stat-label">Очки</span>
+                                        <span class="country-game__stat-value" id="pointsValue">0</span>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 mGame. Учебный проект для практики JavaScript.</p>
+        </div>
+    </footer>
+    <script src="js/country-names-ru.js"></script>
+    <script src="js/guess-country.js"></script>
+</body>
+</html>

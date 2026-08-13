@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-document</title>
+    <link rel="stylesheet" href="01-document.css">
+</head>
+<body>
+    <div class="page">
+        <header class="page__header">
+            <p class="page__label">JS Practice</p>
+            <h1 class="page__title">Тема: document</h1>
+            <p class="page__text">
+                Эта страница нужна для практики работы с document. Здесь есть разные HTML-элементы,
+                чтобы ты мог находить их через JavaScript, смотреть структуру страницы и тренироваться
+                обращаться к DOM.
+            </p>
+        </header>
+
+        <main class="page__content">
+            <section class="card" id="introSection">
+                <h2 class="card__title">Блок 1. Описание</h2>
+                <p class="card__text" id="introText">
+                    На этой странице специально собраны заголовки, абзацы, кнопки, список,
+                    форма и карточки. Всё это нужно не для дизайна, а для практики темы <strong>document</strong>.
+                </p>
+                <button class="card__button" type="button">Обычная кнопка</button>
+            </section>
+
+            <section class="card" id="elementsSection">
+                <h2 class="card__title">Блок 2. Разные элементы</h2>
+                <div class="items">
+                    <div class="item" id="itemOne">Первый div-блок</div>
+                    <div class="item" id="itemTwo">Второй div-блок</div>
+                    <div class="item" id="itemThree">Третий div-блок</div>
+                </div>
+            </section>
+
+            <section class="card" id="listSection">
+                <h2 class="card__title">Блок 3. Список</h2>
+                <ul class="list">
+                    <li class="list__item">Пункт 1</li>
+                    <li class="list__item">Пункт 2</li>
+                    <li class="list__item">Пункт 3</li>
+                    <li class="list__item">Пункт 4</li>
+                </ul>
+            </section>
+
+            <section class="card" id="formSection">
+                <h2 class="card__title">Блок 4. Простая форма</h2>
+                <form class="form">
+                    <label class="form__label" for="nameInput">Имя</label>
+                    <input class="form__input" type="text" id="nameInput" placeholder="Введите имя">
+
+                    <label class="form__label" for="topicSelect">Тема</label>
+                    <select class="form__select" id="topicSelect">
+                        <option>document</option>
+                        <option>querySelector</option>
+                        <option>innerHTML</option>
+                    </select>
+                </form>
+            </section>
+
+            <section class="card" id="footerSection">
+                <h2 class="card__title">Блок 5. Что можно тренировать</h2>
+                <p class="card__text">
+                    Например: смотреть <code>document</code>, находить <code>body</code>, заголовки,
+                    карточки, список, форму и отдельные элементы страницы.
+                </p>
+                <a class="card__link" href="#">Тестовая ссылка</a>
+            </section>
+        </main>
+    </div>
+    <script src="01-document.js"></script>
+</body>
+</html>

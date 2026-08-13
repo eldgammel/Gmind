@@ -1,0 +1,186 @@
+/* GUESS CITY PAGE */
+
+.guess-city-page {
+    min-height: calc(100vh - 154px);
+}
+
+.guess-city {
+    padding: 50px 0;
+}
+
+.guess-city__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.guess-city__top {
+    max-width: 820px;
+}
+
+.guess-city__back {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #cbd5e1;
+    transition: 0.3s;
+}
+
+.guess-city__back:hover {
+    color: #22c55e;
+}
+
+.guess-city__subtitle {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.guess-city__title {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    color: #f1f5f9;
+}
+
+.guess-city__text {
+    max-width: 760px;
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+.guess-city__card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.guess-city__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.guess-city__task {
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.guess-city__task-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.guess-city__task-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.guess-city__input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 520px;
+}
+
+.guess-city__label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #cbd5e1;
+}
+
+.guess-city__input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #f1f5f9;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.guess-city__input::placeholder {
+    color: #94a3b8;
+}
+
+.guess-city__input:focus {
+    border-color: rgba(34, 197, 94, 0.55);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.guess-city__button {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background-color: #22c55e;
+    color: #06240f;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.guess-city__button:hover {
+    background-color: #16a34a;
+}
+
+@media (max-width: 992px) {
+    .guess-city__title {
+        font-size: 40px;
+    }
+
+    .guess-city__task-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .guess-city {
+        padding: 40px 0;
+    }
+
+    .guess-city__title {
+        font-size: 32px;
+    }
+
+    .guess-city__text {
+        font-size: 16px;
+    }
+
+    .guess-city__card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .guess-city__task {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .guess-city__task-text {
+        font-size: 20px;
+    }
+
+    .guess-city__input {
+        padding: 14px 16px;
+    }
+
+    .guess-city__button {
+        width: 100%;
+        align-self: stretch;
+        text-align: center;
+    }
+}
