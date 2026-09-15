@@ -3,6 +3,7 @@ let countryPath;
 let countryArray = [];
 let svgZoom;
 const viewBox = "0 0 1009.6727 665.96301";
+let oldCoordinate = "";
 
 const excludedCountries = [
   "KI", // Кирибати
@@ -68,7 +69,7 @@ fetch("./assets/world-map.svg")
       startButton();
     }
   })
-  
+
   .catch((error) => {
     console.error("Ошибка загрузки SVG-карты:", error);
   });
@@ -89,6 +90,7 @@ function guessColorCountry() {
 function sizeCountry(randomCountrySize) {
   let countryBox = countryArray[randomCountrySize].element.getBBox();
   let areaCountry = countryBox.width * countryBox.height;
+  let stringCountryBoxAnimation = countryBox.x + " " + countryBox.y + " " + countryBox.width + " " + countryBox.height;
 
   function sizeZoom(boxX, boxY, boxWidth, boxHeight) {
     let newX;
@@ -103,32 +105,48 @@ function sizeCountry(randomCountrySize) {
     newHeight = countryBox.height + boxHeight;
     stringCountryBox = newX + " " + newY + " " + newWidth + " " + newHeight;
 
+    animateZoom(stringCountryBox);
     return stringCountryBox;
   }
 
-  if(areaCountry < 10000 && areaCountry >= 1500) {
+  if(areaCountry < 20000 && areaCountry >= 10000) {
     svgZoom.setAttribute("viewBox", sizeZoom(60, 60, 120, 120));
 
-    console.log("Страна большая = " + areaCountry);
-  } else if(areaCountry < 1500 && areaCountry >= 800) {
+    console.log("Страна (20к - 10к) = " + areaCountry);
+  } else if(areaCountry < 10000 && areaCountry >= 5000) {
     svgZoom.setAttribute("viewBox", sizeZoom(100, 100, 200, 200));
 
-    console.log("Страна средняя = " + areaCountry);
-  } else if (areaCountry < 800 && areaCountry >= 600) {
+    console.log("Страна (10к - 5к) = " + areaCountry);
+  } else if(areaCountry < 5000 && areaCountry >= 1500) {
     svgZoom.setAttribute("viewBox", sizeZoom(140, 140, 280, 280));
 
-    console.log("Страна маленькая = " + areaCountry);
-  } else if(areaCountry < 600 && areaCountry >= 300) {
+    console.log("Страна (5к - 1500) = " + areaCountry);
+  } else if(areaCountry < 1500 && areaCountry >= 750) {
     svgZoom.setAttribute("viewBox", sizeZoom(180, 180, 360, 360));
 
-    console.log("Страна очень маленькая = " + areaCountry);
-  } else if(areaCountry < 300) {
+    console.log("Страна (1500 - 750) = " + areaCountry);
+  } else if(areaCountry < 750 && areaCountry >= 500) {
+    svgZoom.setAttribute("viewBox", sizeZoom(140, 140, 280, 280));
+
+    console.log("Страна (750 - 500) = " + areaCountry);
+  } else if(areaCountry < 500 && areaCountry >= 250) {
+    svgZoom.setAttribute("viewBox", sizeZoom(90, 90, 180, 180));
+
+    console.log("Страна (500 - 250) = " + areaCountry);
+  } else if(areaCountry < 250) {
     svgZoom.setAttribute("viewBox", sizeZoom(50, 50, 100, 100));
 
-    console.log("Страна супер маленькая = " + areaCountry);
+    console.log("Страна (меньше 250) = " + areaCountry);
   } else {
     svgZoom.setAttribute("viewBox", viewBox);
-    console.log("Страна большая = " + areaCountry);
+    console.log("Страна (+20к) = " + areaCountry);
+  }
+}
+
+// Плавное увеличение
+function animateZoom(moveFocus) {
+  if(oldCoordinate != moveFocus) {
+    oldCoordinate = moveFocus;
   }
 }
 
@@ -138,12 +156,15 @@ function startButton() {
 
   startButton.addEventListener("click", function(event) {
     let countryGameBoard = document.querySelector(".country-game__board");
+    gameOverBlock.classList.remove("is-game-over");
     randomIndex = guessColorCountry();
 
     if(!document.fullscreenElement) {
       countryGameBoard.requestFullscreen().then(() => {
         countryAnswer.focus();
       });
+    } else {
+      countryAnswer.focus();
     }
 
     if(life === 0) {
@@ -158,12 +179,10 @@ function startButton() {
     }
 
     countryArray[randomIndex].element.style.fill = "#ffea00"; // тут первая подсветка страны
-    
+
     console.log(countryArray[randomIndex].name); // тут просто распечатываем для себя
     sizeCountry(randomIndex);
     console.log("------");
-
-    gameOverBlock.classList.remove("is-game-over");
   });
 }
 
